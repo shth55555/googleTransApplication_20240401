@@ -20,7 +20,8 @@ class GoogleTrans(QMainWindow,form_class):
         self.statusBar().showMessage("Google Trans App v1.0 Made by abc") #윈도우 상태표시줄
 
         self.trans_btn.clicked.connect(self.trans_action)  #시그널...괄호 빼고
-
+        self.init_input.clicked.connect(self.init1_action)
+        self.kor_reset.clicked.connect(self.init2_action)
 
 
 
@@ -38,6 +39,19 @@ class GoogleTrans(QMainWindow,form_class):
         self.en_input.append(engText.text) #번역된 영어 텍스트를 en_input에 출력
         self.ja_input.append(japText.text)
         self.chn_input.append(chnText.text)
+
+
+    def init1_action(self):  #초기화 버튼 함수
+        self.kor_input.clear()   #입력내용 지우기
+        self.ja_input.clear()
+        self.chn_input.clear()
+        self.en_input.clear()
+
+
+
+    def init2_action(self):
+        self.kor_input.clear()
+
 
 if __name__ == "__main__":
     app =  QApplication(sys.argv)

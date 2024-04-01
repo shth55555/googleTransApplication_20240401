@@ -223,6 +223,19 @@ background-color: rgb(222, 255, 247);</string>
      <string>초기화</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="kor_reset">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>530</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>한국어 초기화</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
