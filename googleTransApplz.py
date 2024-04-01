@@ -26,6 +26,7 @@ class GoogleTrans(QMainWindow,form_class):
 
 
 
+
     def trans_action(self):   #번역 실행 함수   ->slot 함수
         korText = self.kor_input.text()  #kor_input에 입력된 한글 텍스트 가져오기
 
