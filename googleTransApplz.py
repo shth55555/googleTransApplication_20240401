@@ -29,17 +29,21 @@ class GoogleTrans(QMainWindow,form_class):
 
     def trans_action(self):   #번역 실행 함수   ->slot 함수
         korText = self.kor_input.text()  #kor_input에 입력된 한글 텍스트 가져오기
+        if korText == "":
+            print("공백테스트")
+            QMessageBox.warning(self, "입력오류!","한글 입력란에 번역할 문장을 넣어주세요.")
+        else:
 
-        trans = googletrans.Translator()  #구글트랜스 모듈의 객체 선언
-        #print(googletrans.LANGUAGES  ㅂ번역 언어 약자 dest 찾기
+            trans = googletrans.Translator()  #구글트랜스 모듈의 객체 선언
+            #print(googletrans.LANGUAGES  ㅂ번역 언어 약자 dest 찾기
 
-        engText = trans.translate(korText,dest="en") #영어번역 결과를 가져옴
-        japText = trans.translate(korText, dest="ja")
-        chnText = trans.translate(korText, dest="zh-cn")
+            engText = trans.translate(korText,dest="en") #영어번역 결과를 가져옴
+            japText = trans.translate(korText, dest="ja")
+            chnText = trans.translate(korText, dest="zh-cn")
 
-        self.en_input.append(engText.text) #번역된 영어 텍스트를 en_input에 출력
-        self.ja_input.append(japText.text)
-        self.chn_input.append(chnText.text)
+            self.en_input.append(engText.text) #번역된 영어 텍스트를 en_input에 출력
+            self.ja_input.append(japText.text)
+            self.chn_input.append(chnText.text)
 
 
     def init1_action(self):  #초기화 버튼 함수
